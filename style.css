@@ -608,9 +608,9 @@ p {
 }
 
 .destination-olive {
-  background:
+  background-image:
     linear-gradient(180deg, rgba(29, 33, 23, 0.05), rgba(29, 33, 23, 0.68)),
-    linear-gradient(135deg, #9ba17a, #4f5b3c);
+    url("img/ostuni.jpg");
 }
 
 .destination-card::before {
