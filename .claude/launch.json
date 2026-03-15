@@ -1,0 +1,31 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "animaecore",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "SRC=\"$PWD\"; DST='/private/tmp/claude-501/-Users-vincenzograsso-Library-Mobile-Documents-com-apple-CloudDocs-Documents-11-ProgettiFrontEnd-AnimaECore/64ef5ca1-5297-4f96-b199-fbcf0e123300/scratchpad/site'; mkdir -p \"$DST/img\"; cp -f \"$SRC\"/index.html \"$SRC\"/style.css \"$SRC\"/script.js \"$DST\"/ 2>/dev/null; cp -f \"$SRC\"/img/* \"$DST/img\"/ 2>/dev/null; cd \"$DST\" && python3 -m http.server 4815"],
+      "port": 4815
+    },
+    {
+      "name": "jampy",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "SRC=\"$PWD/jampy\"; DST='/private/tmp/claude-501/-Users-vincenzograsso-Library-Mobile-Documents-com-apple-CloudDocs-Documents-11-ProgettiFrontEnd-AnimaECore/e33fd5b9-960c-4f95-8b1f-b2f1ddc52a06/scratchpad/jampy'; mkdir -p \"$DST\"; cp -f \"$SRC\"/* \"$DST\"/ 2>/dev/null; cd \"$DST\" && python3 -m http.server 8734"],
+      "port": 8734
+    },
+    {
+      "name": "shopify-dev-landing",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "/Users/vincenzograsso/Library/Mobile Documents/com~apple~CloudDocs/Documents/11_ProgettiFrontEnd/shopify-dev-landing",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "4323"
+      ],
+      "port": 4323
+    }
+  ]
+}
