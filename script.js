@@ -69,3 +69,59 @@ document.querySelectorAll(".button").forEach((btn) => {
     btn.style.setProperty("--y", `${event.clientY - rect.top}px`);
   });
 });
+
+
+// Parallax multilivello della hero.
+// Viene disattivato automaticamente su touch e per chi preferisce meno animazioni.
+const parallaxRoot = document.querySelector("[data-parallax-root]");
+const parallaxLayers = document.querySelectorAll("[data-parallax]");
+
+if (
+  parallaxRoot &&
+  parallaxLayers.length &&
+  window.matchMedia("(pointer: fine)").matches &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+  let frameId;
+
+  parallaxRoot.addEventListener("pointermove", (event) => {
+    const rect = parallaxRoot.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+    cancelAnimationFrame(frameId);
+    frameId = requestAnimationFrame(() => {
+      parallaxLayers.forEach((layer) => {
+        const depth = Number(layer.dataset.parallax || 0);
+        layer.style.translate = `${x * depth * 90}px ${y * depth * 70}px`;
+      });
+    });
+  });
+
+  parallaxRoot.addEventListener("pointerleave", () => {
+    parallaxLayers.forEach((layer) => {
+      layer.style.translate = "0 0";
+    });
+  });
+}
+
+// Tilt premium sulle card, solo con mouse o trackpad.
+if (
+  window.matchMedia("(pointer: fine)").matches &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+  document.querySelectorAll(".experience-card").forEach((card) => {
+    card.addEventListener("pointermove", (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+      card.style.transform =
+        `translateY(-9px) rotateX(${y * -3}deg) rotateY(${x * 3}deg)`;
+    });
+
+    card.addEventListener("pointerleave", () => {
+      card.style.transform = "";
+    });
+  });
+}

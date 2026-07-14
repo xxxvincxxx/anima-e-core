@@ -45,7 +45,7 @@
 
     <section class="hero" id="home">
       <div class="hero-copy">
-        <div class="hero-copy-inner">
+        <div class="hero-copy-inner hero-stagger">
           <p class="eyebrow">Respiro · Movimento · Armonia · Luoghi · Cultura · Benessere</p>
 
           <h1>
@@ -66,34 +66,31 @@
         </div>
       </div>
 
-      <div class="hero-visual">
-        <div class="hero-shape" aria-hidden="true"></div>
+      <div class="hero-visual" data-parallax-root>
+        <div class="hero-orbit hero-orbit-one" data-parallax="0.14" aria-hidden="true"></div>
+        <div class="hero-orbit hero-orbit-two" data-parallax="-0.10" aria-hidden="true"></div>
 
-        <svg class="hero-arc" viewBox="0 0 200 200" aria-hidden="true">
-          <path d="M10 190 A 180 180 0 0 1 190 10" />
-          <circle cx="190" cy="10" r="7" />
-        </svg>
+        <div class="hero-frame" data-parallax="0.06">
+          <img
+            class="hero-photo"
+            src="img/hero-pilates-ulivo.png"
+            alt="Donna che pratica Pilates in un ambiente mediterraneo con rami di ulivo"
+          >
+        </div>
 
-<div class="hero-frame hero-frame-large">
-
-    <img
-
-        class="hero-photo"
-
-        src="img/hero-v2.png"
-
-        alt="Donna che pratica pilates tra rami di ulivo e paesaggio italiano">
-
-</div>
-        <svg class="hero-branch branch-top" viewBox="0 0 100 300" aria-hidden="true">
+        <svg class="hero-branch branch-top" viewBox="0 0 100 300" data-parallax="0.18" aria-hidden="true">
           <use href="#olive-branch"></use>
         </svg>
-        <svg class="hero-branch branch-mid" viewBox="0 0 100 300" aria-hidden="true">
+
+        <svg class="hero-branch branch-bottom" viewBox="0 0 100 300" data-parallax="-0.12" aria-hidden="true">
           <use href="#olive-branch"></use>
         </svg>
-        <svg class="hero-branch branch-bottom" viewBox="0 0 100 300" aria-hidden="true">
-          <use href="#olive-branch"></use>
-        </svg>
+
+        <div class="hero-floating-note" data-parallax="0.08">
+          <span>Respira</span>
+          <span>Muoviti</span>
+          <span>Vivi</span>
+        </div>
       </div>
     </section>
 
